@@ -2,6 +2,7 @@ package com.viz.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
 import java.sql.Timestamp;
 
 @Data
