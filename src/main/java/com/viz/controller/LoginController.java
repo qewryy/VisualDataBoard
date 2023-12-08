@@ -2,6 +2,7 @@ package com.viz.controller;
 
 import com.viz.dto.request.LoginRequest;
 import com.viz.service.UserService;
+import jakarta.servlet.http.Cookie;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +17,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody LoginRequest loginRequest) {
+    public Cookie login(@RequestBody LoginRequest loginRequest) {
         return userService.loginUser(loginRequest.getUsername(), loginRequest.getPassword());
     }
 }

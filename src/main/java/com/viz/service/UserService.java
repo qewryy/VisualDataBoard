@@ -3,6 +3,7 @@ package com.viz.service;
 import com.viz.domain.User;
 import com.viz.repository.UserRepository;
 import com.viz.security.JwtProvider;
+import jakarta.servlet.http.Cookie;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -23,7 +24,7 @@ public class UserService {
         this.jwtProvider = jwtProvider;
     }
 
-    public String loginUser(String username, String password) {
+    public Cookie loginUser(String username, String password) {
         // 아이디로 사용자 정보 조회
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("유저를 찾을 수 없습니다."));
