@@ -1,4 +1,4 @@
-package com.viz.domain;
+package com.viz.visualdataboard.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 
 @Data
 @Entity
-@Table(name = "USERS")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,4 +1,4 @@
-package com.viz.dto.response;
+package com.viz.visualdataboard.dto.response;
 
 import lombok.Data;
 

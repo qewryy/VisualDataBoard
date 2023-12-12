@@ -1,4 +1,4 @@
-package com.viz.exception;
+package com.viz.visualdataboard.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

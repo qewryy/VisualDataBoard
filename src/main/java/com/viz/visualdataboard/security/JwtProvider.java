@@ -1,6 +1,6 @@
-package com.viz.security;
+package com.viz.visualdataboard.security;
 
-import com.viz.domain.Role;
+import com.viz.visualdataboard.domain.Role;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;

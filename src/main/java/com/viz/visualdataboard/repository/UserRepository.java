@@ -1,6 +1,6 @@
-package com.viz.repository;
+package com.viz.visualdataboard.repository;
 
-import com.viz.domain.User;
+import com.viz.visualdataboard.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

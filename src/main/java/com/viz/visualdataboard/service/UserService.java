@@ -1,8 +1,8 @@
-package com.viz.service;
+package com.viz.visualdataboard.service;
 
-import com.viz.domain.User;
-import com.viz.repository.UserRepository;
-import com.viz.security.JwtProvider;
+import com.viz.visualdataboard.domain.User;
+import com.viz.visualdataboard.repository.UserRepository;
+import com.viz.visualdataboard.security.JwtProvider;
 import jakarta.servlet.http.Cookie;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,6 +22,11 @@ public class UserService {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtProvider = jwtProvider;
+    }
+
+    public void join(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userRepository.save(user);
     }
 
     public Cookie loginUser(String username, String password) {

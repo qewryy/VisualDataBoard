@@ -1,4 +1,4 @@
-package com.viz.service;
+package com.viz.visualdataboard.service;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

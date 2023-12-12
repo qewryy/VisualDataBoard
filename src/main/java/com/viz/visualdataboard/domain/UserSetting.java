@@ -1,11 +1,11 @@
-package com.viz.domain;
+package com.viz.visualdataboard.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "USERSETTINGS")
+@Table(name = "usersettings")
 public class UserSetting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

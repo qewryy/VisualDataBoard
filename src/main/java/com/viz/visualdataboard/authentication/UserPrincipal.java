@@ -1,4 +1,4 @@
-package com.viz.authentication;
+package com.viz.visualdataboard.authentication;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
