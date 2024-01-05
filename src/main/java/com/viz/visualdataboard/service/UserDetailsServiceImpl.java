@@ -1,5 +1,7 @@
 package com.viz.visualdataboard.service;
 
+import com.viz.visualdataboard.domain.User;
+import com.viz.visualdataboard.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -7,12 +9,21 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+    private final UserRepository userRepository;
+    private User user;
+
+    public UserDetailsServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // username에 해당하는 사용자 정보를 불러옵니다.
-        // 해당 사용자 정보가 없을 경우 UsernameNotFoundException을 던집니다.
-        // 여기서는 예시로 null을 반환하도록 하였습니다.
-        return null;
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("아이디를 찾지 못했습니다 : " + username));
+        return new UserDetailsImpl(user);
+    }
+
+    public Long getId() {
+        return (long) user.getUserID();
     }
 }

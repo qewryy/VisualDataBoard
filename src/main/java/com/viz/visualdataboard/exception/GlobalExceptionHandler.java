@@ -21,5 +21,10 @@ public class GlobalExceptionHandler {
         // 비밀번호가 맞지 않는 경우의 처리 로직
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
     }
+    @ExceptionHandler(FileStorageException.class)
+    public ResponseEntity<String> handleFileStorageException(FileStorageException e) {
+        // 파일 저장 중 발생하는 예외 처리 로직
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+    }
 }
 

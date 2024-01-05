@@ -22,6 +22,9 @@ public class User {
     @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
+    private String filename;
+
     @ManyToOne
     @JoinColumn(name="RoleID")
     private Role role;
